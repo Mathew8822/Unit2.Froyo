@@ -1,0 +1,17 @@
+//Have the user make a list of flovors 
+const userInputFlavors = prompt("please enter a list of Froyo Flavors separated by commas.", "vanilla,vanilla,vanilla,strwaberry,coffee,coffee")
+//Turn strings of flavors into an array of flavors
+const FlavorsArray = userInputFlavors.split(",")
+//Push strings
+const froyoFlavors = {}
+//looping through object to stroe flavors
+for (let i = 0; i < FlavorsArray.length; i++) {
+    let currentFlavor = FlavorsArray[i]
+    if (currentFlavor in froyoFlavors) {
+        froyoFlavors[currentFlavor] += 1
+    } else {
+        froyoFlavors[currentFlavor] = 1
+    }
+
+}
+console.table(froyoFlavors)
